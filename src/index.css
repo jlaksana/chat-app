@@ -1,0 +1,186 @@
+font* {
+  box-sizing: border-box;
+}
+html,
+body {
+  min-height: 100%;
+  background: #b9d9eb;
+  color: #0e3386;
+}
+/* sets the body height of the browser, so that backgrounds and div heights work correctly. Color and background will almost certainly be altered; they are just placeholders */
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1.4rem;
+  text-rendering: optimizeLegibility;
+}
+/* sets the base font size for the document; turns on kerning pairs and ligatures */
+
+body,
+ul,
+ol,
+dl {
+  margin: 0;
+}
+article,
+aside,
+audio,
+footer,
+header,
+nav,
+section,
+video {
+  display: block;
+}
+
+/* ensures that older browsers will display HTML5 elements correctly */
+
+h1 {
+  font-size: 1.4rem;
+}
+/* begins to set up font sizes relative to base rem – h1 has been used as an example */
+
+p {
+  font-size: 14px;
+  -ms-word-break: break-all;
+  word-break: break-all;
+  word-break: break-word;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+}
+/* sets hyphenation by default on paragraphs */
+
+textarea {
+  resize: vertical;
+}
+/* changes textarea resizing from "both" (UA default) to vertical only */
+
+table {
+  border-collapse: collapse;
+}
+td {
+  padding: 0.5rem;
+}
+/* causes tables to actually look like tables */
+
+img {
+  border: none;
+  max-width: 100%;
+}
+/* removes outlines from linked images (for older browsers and IE), sets up images for responsive design layout */
+
+input[type="submit"]::-moz-focus-inner,
+input[type="button"]::-moz-focus-inner {
+  border: 0px;
+}
+/* removes the inner border effect from focused buttons for form elements in Firefox */
+
+input[type="search"] {
+  -webkit-appearance: textfield;
+}
+input[type="submit"] {
+  -webkit-appearance: none;
+}
+/* removes the OS X appearance from HTML5 search inputs and submit buttons when viewed in Safari */
+
+input:required:after {
+  color: #f00;
+  content: " *";
+}
+/* sets up required form fields with the conventional following red asterix */
+input[type="email"]:invalid {
+  border: 2px solid #f00;
+}
+/* causes a visual alert in browsers that do client-side checking of HTML5 email field – this may already be the default in some browsers. */
+
+.right {
+  float: right;
+  margin-left: 2rem;
+  clear: right;
+}
+.left {
+  float: left;
+  margin-right: 2rem;
+  clear: left;
+}
+/* allows a quick shortcut for floating elements left and right while avoiding the “float quirk” problem */
+
+sub,
+sup {
+  line-height: 0;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+  font-size: 1rem;
+  height: 2rem;
+  border: none;
+  border-bottom: 2px solid #b9d9eb;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus {
+  border: 2px solid #0e3386;
+}
+
+input[type="image"] {
+}
+
+/* CSS */
+button {
+  align-items: center;
+  background-clip: padding-box;
+  background-color: #0e3386;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: system-ui, -apple-system, system-ui, "Helvetica Neue", Helvetica,
+    Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 1.25;
+  margin: 0;
+  min-height: 3rem;
+  padding: calc(0.875rem - 1px) calc(1.5rem - 1px);
+  position: relative;
+  text-decoration: none;
+  transition: all 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  width: auto;
+}
+
+button:hover,
+button:focus {
+  background-color: #0e2050;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+}
+
+button:hover {
+  transform: translateY(-1px);
+}
+
+button:active {
+  background-color: #0e3386;
+  box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+  transform: translateY(0);
+}
+
+.app {
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
