@@ -16,3 +16,8 @@ form {
   flex-direction: column;
   gap: 2rem;
 }
+
+.error {
+  font-size: 1rem;
+  color: red;
+}
