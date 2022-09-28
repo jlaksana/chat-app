@@ -1,8 +1,29 @@
-import { Link } from "react-router-dom";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { auth } from "../firebase";
 import "../styles/Auth.css";
 
 function Login() {
-  const handleSubmit = () => {};
+  const [error, setError] = useState(false);
+  const navigate = useNavigate();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const email = e.target[0].value;
+    const password = e.target[1].value;
+
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Signed in
+        const user = userCredential.user;
+        navigate("/");
+      })
+      .catch((error) => {
+        setError(true);
+        console.log(error);
+      });
+  };
 
   return (
     <div className="auth">
@@ -16,6 +37,7 @@ function Login() {
           name="password"
           placeholder="password"
         />
+        {error && <span className="error">Invalid login. Try again</span>}
         <button type="submit">Login</button>
       </form>
       <p>
