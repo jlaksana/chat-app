@@ -72,7 +72,13 @@ function SignUp() {
           placeholder="Display Name"
           required
         />
-        <input type="email" id="email" name="email" placeholder="Email" />
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Email"
+          required
+        />
         <input
           type="password"
           id="password"
@@ -82,7 +88,7 @@ function SignUp() {
         />
         <div>
           <p>Upload Profile Picture</p>
-          <input type="file" name="Avatar" />
+          <input type="file" name="Avatar" required />
         </div>
         {loading && "Uploading image..."}
         {error && (
