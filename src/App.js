@@ -1,10 +1,9 @@
-import { signOut } from "firebase/auth";
 import { useContext } from "react";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { AuthContext } from "./AuthContext";
+import Home from "./components/Home";
 import Login from "./components/Login";
 import SignUp from "./components/SignUp";
-import { auth } from "./firebase";
 
 function App() {
   const { curUser } = useContext(AuthContext);
@@ -26,14 +25,7 @@ function App() {
               index
               element={
                 <ProtectedRoute>
-                  <h1>Home page</h1>
-                  <button
-                    onClick={() => {
-                      signOut(auth);
-                    }}
-                  >
-                    sign out
-                  </button>
+                  <Home />
                 </ProtectedRoute>
               }
             />
