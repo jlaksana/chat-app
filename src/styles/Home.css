@@ -1,0 +1,105 @@
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.container {
+  border: 1px solid white;
+  border-radius: 15px;
+  width: 65%;
+  height: 80%;
+  display: flex;
+  overflow: hidden;
+}
+
+.sidebar {
+  flex: 1;
+  background-color: #123ea1;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  background-color: #0b286b;
+  height: 50px;
+  padding: 10px;
+  justify-content: space-between;
+  color: aliceblue;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+}
+
+.user img {
+  background-color: aliceblue;
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.user button {
+  background-color: #123ea1;
+  color: aliceblue;
+  font-size: 10px;
+  min-height: 1rem;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.search {
+  border-bottom: 1px solid gray;
+}
+
+.searchForm {
+  padding: 10px;
+}
+
+.searchForm input {
+  background-color: transparent;
+  color: aliceblue;
+  width: 95%;
+}
+
+.searchForm input::placeholder {
+  color: lightgray;
+}
+
+.userChats {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: aliceblue;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.userChats:hover {
+  background-color: #0b286b;
+}
+
+.userChats img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.userChats p {
+  color: lightgray;
+  padding: 2px;
+  margin: 0;
+  font-size: 12px;
+}
+
+.chat {
+  flex: 2;
+}

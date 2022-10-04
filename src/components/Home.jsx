@@ -1,5 +1,4 @@
-import { signOut } from "firebase/auth";
-import { auth } from "../firebase";
+import "../styles/Home.css";
 import Chat from "./Chat";
 import Sidebar from "./Sidebar";
 
@@ -9,13 +8,6 @@ function Home() {
       <div className="container">
         <Sidebar />
         <Chat />
-        <button
-          onClick={() => {
-            signOut(auth);
-          }}
-        >
-          sign out
-        </button>
       </div>
     </div>
   );
