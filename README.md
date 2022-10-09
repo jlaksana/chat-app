@@ -1,3 +1,9 @@
+# Summary
+
+This project is a chat application developed with React and Google Firebase. Please only use this app with a laptop or desktop computer. This was not designed for mobile devices. To test, go to [https://chat-app-cccd2.web.app/](https://chat-app-cccd2.web.app/).
+
+You can sign up to create a new account or sign in as a guest to quickly see and test the app with an account that was already made.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
