@@ -11,6 +11,7 @@ import {
 } from "firebase/firestore";
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../AuthContext";
+import { ChatContext } from "../ChatContext";
 import { db } from "../firebase";
 
 function Search() {
@@ -19,6 +20,7 @@ function Search() {
   const [err, setErr] = useState(false);
 
   const { curUser } = useContext(AuthContext);
+  const { dispatch } = useContext(ChatContext);
 
   const searchUser = async () => {
     const usersRef = collection(db, "users");
@@ -69,6 +71,14 @@ function Search() {
           [combinedID + ".date"]: serverTimestamp(),
         });
       }
+      dispatch({
+        type: "CHANGE_USER",
+        payload: {
+          uid: user.uid,
+          displayName: user.displayName,
+          photoURL: user.photoURL,
+        },
+      });
     } catch (error) {
       setErr(true);
       console.log(error);
