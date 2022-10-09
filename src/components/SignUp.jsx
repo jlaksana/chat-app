@@ -30,28 +30,22 @@ function SignUp() {
 
       await uploadBytesResumable(storageRef, file).then(() => {
         getDownloadURL(storageRef).then(async (downloadURL) => {
-          try {
-            //Update profile
-            await updateProfile(user, {
-              displayName,
-              photoURL: downloadURL,
-            });
-            //create user on firestore
-            await setDoc(doc(db, "users", user.uid), {
-              uid: user.uid,
-              displayName,
-              email,
-              photoURL: downloadURL,
-            });
+          //Update profile
+          await updateProfile(user, {
+            displayName,
+            photoURL: downloadURL,
+          });
+          //create user on firestore
+          await setDoc(doc(db, "users", user.uid), {
+            uid: user.uid,
+            displayName,
+            email,
+            photoURL: downloadURL,
+          });
 
-            //create empty user chats on firestore
-            await setDoc(doc(db, "userChats", user.uid), {});
-            navigate("/");
-          } catch (err) {
-            console.log(err);
-            setError(true);
-            setLoading(false);
-          }
+          //create empty user chats on firestore
+          await setDoc(doc(db, "userChats", user.uid), {});
+          navigate("/");
         });
       });
     } catch (err) {
