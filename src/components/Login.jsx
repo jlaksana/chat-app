@@ -14,7 +14,19 @@ function Login() {
     const password = e.target[1].value;
 
     signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
+      .then(() => {
+        // Signed in
+        navigate("/");
+      })
+      .catch((error) => {
+        setError(true);
+        console.log(error);
+      });
+  };
+
+  const handleGuest = async () => {
+    signInWithEmailAndPassword(auth, "guest@email.com", "123123")
+      .then(() => {
         // Signed in
         navigate("/");
       })
@@ -38,6 +50,7 @@ function Login() {
         />
         {error && <span className="error">Invalid login. Try again</span>}
         <button type="submit">Login</button>
+        <button onClick={handleGuest}>Login as Guest</button>
       </form>
       <p>
         Don't have an account? <Link to="/signup">Sign Up</Link>
